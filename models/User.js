@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+//const dateFormat = require('../utils/dateFormat');
 // username, email, thoughts, friends
 const UserSchema = new Schema({
     username: {
@@ -11,7 +12,6 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        // use REGEX to validate email
         match: [/.+@.+\..+/]
     },
     thoughts: [{// populate

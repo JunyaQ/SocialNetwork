@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JunyaQ/bootcamp-challenge-18-SocialNetwork#readme",
   "dependencies": {
+    "express": "^4.17.2",
     "mongodb": "^4.3.1",
     "mongoose": "^6.1.8"
   }
