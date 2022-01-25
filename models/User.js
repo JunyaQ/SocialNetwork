@@ -14,12 +14,11 @@ const UserSchema = new Schema({
         // use REGEX to validate email
         match: [/.+@.+\..+/]
     },
-    thoughts: [{
+    thoughts: [{// populate
         type: Schema.Types.ObjectId,
         ref: 'Thought'
     }],
-    friends: [
-        {
+    friends: [{//populate
         type: Schema.Types.ObjectId,
         ref: 'User'
         }]
