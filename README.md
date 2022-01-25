@@ -40,3 +40,7 @@ Because there is no data in the database, it
 - Delete one single thought (DELETE): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c (61f04325784dd3c4f0594f1c is the thought ID)
 - Create a reaction based on a thought (POST): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c/reactions (61f04325784dd3c4f0594f1c is the thought ID)
 - Delete a reaction (DELETE): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c/reactions/61f04cd767a304180f7d8409 (61f04325784dd3c4f0594f1c is the thought ID, and 61f04cd767a304180f7d8409 is the reaction ID )
+
+
+## Walkthrough video
+ [Insomnia walkthrough video](https://drive.google.com/file/d/1e4pOmaqR7x9V1ZLvwqb7iqpXv9D4alek/view?usp=sharing)<br/>
