@@ -24,19 +24,19 @@ In the console, make connection to localhost, with "npm run start". <br/>
 Because there is no data in the database, it
 
 ### Users
-- Get All Users: http://localhost:3001/api/users
-- Get one single user: http://localhost:3001/api/users/ 61efb56bb214ad449f20c45c (61efb56bb214ad449f20c45c is the user ID)
-- Create one single user: http://localhost:3001/api/users/
-- Update one single user: http://localhost:3001/api/users/ 61efb56bb214ad449f20c45c (61efb56bb214ad449f20c45c is the user ID)
-- Delete on single user: http://localhost:3001/api/users/ 61efb56bb214ad449f20c45c (61efb56bb214ad449f20c45c is the user ID)
-- User add a friend: 
-- Delete a friend: 
-
+- Get All Users (GET): http://localhost:3001/api/users
+- Get one single user (GET): http://localhost:3001/api/users/ 61efb56bb214ad449f20c45c (61efb56bb214ad449f20c45c is the user ID)
+- Create (POST) one single user: http://localhost:3001/api/users/
+- Update (PUT) one single user: http://localhost:3001/api/users/ 61efb56bb214ad449f20c45c (61efb56bb214ad449f20c45c is the user ID)
+- Delete on single user (DELETE): http://localhost:3001/api/users/ 61efb56bb214ad449f20c45c (61efb56bb214ad449f20c45c is the user ID)
+- User add a friend (POST): http://localhost:3001/api/users/61efbfa2bad5a0bd9f93890f/friends/61f05de667a304180f7d8414 (61efbfa2bad5a0bd9f93890f is the first user ID, and 61f05de667a304180f7d8414 is the second user ID)
+- Delete a friend (DELETE):  http://localhost:3001/api/users/61efbfa2bad5a0bd9f93890f/friends/61f05de667a304180f7d8414 (61efbfa2bad5a0bd9f93890f is the first user ID, and 61f05de667a304180f7d8414 is the second user ID)
+ 
 ### Thoughts
-- Get all Thoughts: http://localhost:3001/api/thoughts
-- Get one single thought: http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c (61f04325784dd3c4f0594f1c is the thought ID)
-- Create one single thought: http://localhost:3001/api/thoughts/61efbfa2bad5a0bd9f93890f (61efbfa2bad5a0bd9f93890f is the thought ID)
-- Update one single thought: http://localhost:3001/api/thoughts/61efbfa2bad5a0bd9f93890f (61efbfa2bad5a0bd9f93890f is the thought ID)
-- Delete one single thought: http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c (61f04325784dd3c4f0594f1c is the thought ID)
-- Create a reaction based on a thought: http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c/reactions (61f04325784dd3c4f0594f1c is the thought ID)
-- Delete a reaction: http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c/reactions/61f04cd767a304180f7d8409 (61f04325784dd3c4f0594f1c is the thought ID, and 61f04cd767a304180f7d8409 is the reaction ID )
+- Get all Thoughts (GET): http://localhost:3001/api/thoughts
+- Get one single thought (GET): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c (61f04325784dd3c4f0594f1c is the thought ID)
+- Create one single thought (POST): http://localhost:3001/api/thoughts/61efbfa2bad5a0bd9f93890f (61efbfa2bad5a0bd9f93890f is the thought ID)
+- Update one single thought (PUT): http://localhost:3001/api/thoughts/61efbfa2bad5a0bd9f93890f (61efbfa2bad5a0bd9f93890f is the thought ID)
+- Delete one single thought (DELETE): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c (61f04325784dd3c4f0594f1c is the thought ID)
+- Create a reaction based on a thought (POST): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c/reactions (61f04325784dd3c4f0594f1c is the thought ID)
+- Delete a reaction (DELETE): http://localhost:3001/api/thoughts/61f04325784dd3c4f0594f1c/reactions/61f04cd767a304180f7d8409 (61f04325784dd3c4f0594f1c is the thought ID, and 61f04cd767a304180f7d8409 is the reaction ID )
