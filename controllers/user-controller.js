@@ -1,5 +1,6 @@
 const {User, Thought} = require('../models');
 
+
 const userController = {
     // get all users
     getAllUsers(req,res){
@@ -20,7 +21,7 @@ const userController = {
         })
     },
     getUserById({params},res){
-        User.findOne({_id:params.id})
+        User.findOne({id:params.id})
         .populate({
             path:'thoughts',
             select:'-_v'
@@ -41,14 +42,14 @@ const userController = {
         })
     },
     //create a user
-    createUser({body},res){
+    createUser({ body }, res){
         User.create(body)
         .then(data=> res.json(data))
         .catch(error => res.status(400).json(error));
     },
     // update a user by choosing a id
     updateUser({ params, body }, res) {
-        User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+        User.findOneAndUpdate({ id: params.id }, body, { new: true, runValidators: true })
             .then(data => {
                 if (!data) {
                     res.status(404).json({ message: 'No user found with this id!' });
@@ -61,7 +62,7 @@ const userController = {
 
     // delete user
     deleteUser({ params }, res) {
-        User.findOneAndDelete({ _id: params.id })
+        User.findOneAndDelete({ id: params.id })
             .then(data => {
                 if (!data) {
                     res.status(404).json({ message: 'No user found with this id!' });
