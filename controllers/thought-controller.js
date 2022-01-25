@@ -17,7 +17,7 @@ const thoughtController = {
 
     // Get a certain thought by ID
     getThoughtById({params}, res) {
-        Thought.findOne({ _id: params.id })
+        Thought.findOne({ id: params.id })
         .populate({path: 'reactions',select: '-__v'})
         .select('-__v')
         .then(data => {
@@ -34,9 +34,9 @@ const thoughtController = {
        // Create a new thought
        createThought({params, body}, res) {
         Thought.create(body)
-        .then(({_id}) => {
+        .then(({id}) => {
             return User.findOneAndUpdate(
-        { _id: params.userId}, {$push: {thoughts: _id}}, {new: true});
+        { id: params.userId}, {$push: {thoughts: id}}, {new: true});
         })
         .then(data => {
             if(!data) {
@@ -50,7 +50,7 @@ const thoughtController = {
 
     // Update a current thought by ID
     updateThought({params, body}, res) {
-        Thought.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
+        Thought.findOneAndUpdate({id: params.id}, body, {new: true, runValidators: true})
         .populate({path: 'reactions', select: '-__v'})
         .select('-___v')
         .then(data => {
@@ -65,7 +65,7 @@ const thoughtController = {
 
     // Delete a current thought by ID
     deleteThought({params}, res) {
-        Thought.findOneAndDelete({_id: params.id})
+        Thought.findOneAndDelete({id: params.id})
         .then(data => {
             if (!data) {
                 res.status(404).json({message: 'No thoughts with this particular ID!'});
@@ -78,7 +78,7 @@ const thoughtController = {
 
     // Add a new Reaction
     addReaction({params, body}, res) {
-        Thought.findOneAndUpdate({_id: params.thoughtId}, {$push: {reactions: body}}, {new: true, runValidators: true})
+        Thought.findOneAndUpdate({id: params.thoughtId}, {$push: {reactions: body}}, {new: true, runValidators: true})
         .populate({path: 'reactions', select: '-__v'})
         .select('-__v')
         .then(data => {
@@ -94,7 +94,7 @@ const thoughtController = {
 
     // Delete a reaction by ID
     deleteReaction({params}, res) {
-        Thought.findOneAndUpdate({_id: params.thoughtId}, {$pull: {reactions: {reactionId: params.reactionId}}}, {new : true})
+        Thought.findOneAndUpdate({id: params.thoughtId}, {$pull: {reactions: {reactionId: params.reactionId}}}, {new : true})
         .then(data => {
             if (!data) {
                 res.status(404).json({message: 'No thoughts with this particular ID!'});

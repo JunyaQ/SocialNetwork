@@ -15,7 +15,7 @@ const {
 
   router.route('/:id').get(getThoughtById);
   router.route('/:id').put(updateThought);
-  router.route('/:id').put(deleteThought);
+  router.route('/:id').delete(deleteThought);
 
   router.route('/:userId').post(createThought);
 
