@@ -7,12 +7,12 @@ const userController = {
         // populate users thought
         .populate({
             path:'thoughts',
-            select:'-_V'
+            select:'-_v'
         })
         // populate user freind
         .populate({
             path:'friends',
-            select:'-_V'
+            select:'-_v'
         })
         .then(data => res.json(data))
         .catch(error=>{
@@ -20,14 +20,14 @@ const userController = {
         })
     },
     getUserById({params},res){
-        Users.findOne({_id:params.id})
+        User.findOne({_id:params.id})
         .populate({
             path:'thoughts',
-            select:'-_V'
+            select:'-_v'
         })
         .populate({
             path:'friends',
-            select:'-_V'
+            select:'-_v'
         })
         .then(data=>{
             if(!data){

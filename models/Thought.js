@@ -15,7 +15,6 @@ const ReactionSchema = new Schema({
     username: {
         type: String,
         required: true,
-        trim:true
     },
     createdAt: {
         type: Date,
@@ -27,6 +26,7 @@ const ReactionSchema = new Schema({
     toJSON: {
         getters: true
     },
+    id:false
 }
 );
 
