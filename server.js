@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 // Connect mongoose
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network', {
   //useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+  //useNewUrlParser: true,
+  //useUnifiedTopology: true
 });
 
 // Log mongoose queries
