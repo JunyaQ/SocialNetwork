@@ -1,4 +1,4 @@
-# bootcamp-challenge-18-SocialNetwork
+# SocialNetwork
 
 ## Social Network API
 - User model has user id, username, email, thoughts(related to thought model) and friends(related to user model itself)
